@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">campuscoffee</string>
+    <string name="app_title">Campus Coffee</string>
+    <string name="name_for_order">Name for order</string>
+    <string name="john_doe">John Doe</string>
+    <string name="espresso">Espresso</string>
+    <string name="vanilla_latte">Vanilla Latte</string>
+    <string name="caramel_latte">Caramel Latte</string>
 </resources>
