@@ -16,12 +16,13 @@ import androidx.core.view.WindowInsetsCompat
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
+
+    // Lifecycle methods
     override fun onStart() {
         super.onStart()
 
         Log.d("LIFECYCLE", "onStart() was ran!")
     }
-
 
     override fun onDestroy() {
         super.onDestroy()
@@ -47,8 +48,6 @@ class MainActivity : AppCompatActivity() {
         Log.d("LIFECYCLE", "onStop() was ran!")
     }
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -62,12 +61,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Get views
         val btn = findViewById<Button>(R.id.btnSubmit)
-
         val txtError = findViewById<TextView>(R.id.txtError)
 
-
-
+        // Submit button listener
         btn.setOnClickListener { v ->
 
             var valid = true
@@ -84,7 +82,7 @@ class MainActivity : AppCompatActivity() {
             val coffeeSizeId = findViewById<RadioGroup>(R.id.coffeeSize).checkedRadioButtonId
             val coffeeSize = findViewById<RadioButton>(coffeeSizeId)?.text
 
-            // Validate
+            // Validate required fields
             if (nameForOrder.isEmpty()) {
                 errorMessage += "\nNo Name Submitted"
                 valid = false
@@ -98,18 +96,21 @@ class MainActivity : AppCompatActivity() {
                 valid = false
             }
 
+            // Guard condition
             if (!valid) {
                 txtError.text = errorMessage
                 return@setOnClickListener
             }
 
+            // Create intent
             val intent = Intent(this@MainActivity, ActivityTwo::class.java)
 
-            // Add Extras
-            intent.putExtra("Name", nameForOrder)
+            // Add Extras to the intent
+            intent.putExtra("Name", nameForOrder.toString())
             intent.putExtra("CoffeeType", coffeeType)
             intent.putExtra("CoffeeSize", coffeeSize)
 
+            // Send intent with data
             startActivity(intent)
         }
     }

@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/customTheme1_surface">
 
     <TextView
         android:id="@+id/appTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/app_title"
-        android:textSize="40sp"
-        android:textAlignment="center"/>
+        style="@style/AppTitle"/>
 
     <TextView
         android:id="@+id/txtError"
@@ -93,6 +93,7 @@
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/submit"/>
+        android:text="@string/submit"
+        style="@style/PrimaryButton"/>
 
 </LinearLayout>
