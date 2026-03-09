@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -15,36 +16,83 @@
         android:textSize="40sp"
         android:textAlignment="center"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/name_for_order"
-            android:labelFor="@+id/nameForOrder"/>
-        <EditText
-            android:id="@+id/nameForOrder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="@string/john_doe"/>
+    <TextView
+        android:id="@+id/txtError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#ff0000"
+        android:textAlignment="center"/>
 
-        <RadioGroup
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/outline_coffee_240" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_for_order"/>
+    <EditText
+        android:id="@+id/nameForOrder"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:autofillHints="name"
+        android:inputType="text"
+        android:hint="@string/john_doe"/>
+
+    <RadioGroup
+        android:id="@+id/coffeeType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/espressoButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:id="@+id/espressoButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/espresso"/>
-            <RadioButton
-                android:id="@+id/vanillaLatteButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/vanilla_latte"/>
-            <RadioButton
-                android:id="@+id/caramelLatteButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/caramel_latte"/>
-        </RadioGroup>
+            android:layout_height="wrap_content"
+            android:text="@string/espresso"/>
+        <RadioButton
+            android:id="@+id/vanillaLatteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/vanilla_latte"/>
+        <RadioButton
+            android:id="@+id/caramelLatteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/caramel_latte"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/size"/>
+
+    <RadioGroup
+        android:id="@+id/coffeeSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/smallButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/small"/>
+        <RadioButton
+            android:id="@+id/mediumButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/medium"/>
+        <RadioButton
+            android:id="@+id/largeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/large"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"/>
 
 </LinearLayout>

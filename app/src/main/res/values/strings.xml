@@ -6,4 +6,9 @@
     <string name="espresso">Espresso</string>
     <string name="vanilla_latte">Vanilla Latte</string>
     <string name="caramel_latte">Caramel Latte</string>
+    <string name="size">Size</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="submit">Submit</string>
 </resources>
